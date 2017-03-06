@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -191,6 +190,10 @@
                     <connections>
                         <outlet property="chipmunkButton" destination="CQh-ok-zkK" id="Nej-nu-TAR"/>
                         <outlet property="echoButton" destination="uiM-ym-LOo" id="REc-cG-Nks"/>
+                        <outlet property="innerStackView1" destination="gvi-FA-hVG" id="epj-Wo-2Oa"/>
+                        <outlet property="innerStackView2" destination="HHv-Xe-p4q" id="GPm-t0-Gbj"/>
+                        <outlet property="innerStackView3" destination="bLg-Af-rVN" id="MeD-Po-1iL"/>
+                        <outlet property="outerStackView" destination="IcB-Q6-vQy" id="MTh-E4-Ja7"/>
                         <outlet property="rabbitButton" destination="Ff1-XS-816" id="T1A-p9-8az"/>
                         <outlet property="reverbButton" destination="mFH-mN-aBQ" id="Tu5-Rb-iXr"/>
                         <outlet property="snailButton" destination="oLc-1e-LUb" id="fVm-pc-bSN"/>

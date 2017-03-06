@@ -11,6 +11,11 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
+  @IBOutlet weak var outerStackView: UIStackView!
+  @IBOutlet weak var innerStackView1: UIStackView!
+  @IBOutlet weak var innerStackView2: UIStackView!
+  @IBOutlet weak var innerStackView3: UIStackView!
+
   @IBOutlet weak var snailButton: UIButton!
   @IBOutlet weak var chipmunkButton: UIButton!
   @IBOutlet weak var rabbitButton: UIButton!
@@ -60,5 +65,25 @@ class PlaySoundsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupAudio()
+  }
+
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    coordinator.animate(alongsideTransition: { (context) -> Void in
+      let orientation = UIApplication.shared.statusBarOrientation
+
+      if orientation.isPortrait{
+        self.outerStackView.axis = .vertical
+        self.setInnerStackViewsAxis(axisStyle: .horizontal)
+      } else {
+        self.outerStackView.axis = .horizontal
+        self.setInnerStackViewsAxis(axisStyle: .vertical)
+      }
+    }, completion: nil)
+  }
+
+  func setInnerStackViewsAxis(axisStyle: UILayoutConstraintAxis)  {
+    self.innerStackView1.axis = axisStyle
+    self.innerStackView2.axis = axisStyle
+    self.innerStackView3.axis = axisStyle
   }
 }
